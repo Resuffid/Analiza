@@ -279,11 +279,11 @@ normalny <- rnorm(1000)
 hist(normalny)
 
 set.seed(1011)
-bi <- rbinom(1000, 10, 0.1)
+bi <- rbinom(1000, 3, 0.1)
 hist(bi)
 
 set.seed(1011)
-tr <- rt(1000, 10000)
+tr <- rt(1000, 1000000)
 hist(tr)
 
 set.seed(1011)
