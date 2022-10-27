@@ -54,10 +54,23 @@ hist(z, breaks=20)
 
 hist(z, breaks=z, freq=T, right = F)
 
+# LUB tyle ile wynosi różnica między dwoma najmniejszymi danymi w zbiorze. TO DZIAŁA TYLKO DLA DANYCH W KTÓRYCH WYNIKI NIE POWTARZAJĄ SIĘ
+
 # Narysować histogram z danego wektora, żeby histogram był płaski
 
-wyn <- 101/12
-hist(z, breaks=12)
+set.seed(123)
+x <- sort(runif(1000, -5, 10))
+x[100]
+x[101]
+(x[101]-x[100])/2 # Granica pierwszego przedziału i tak co 100 robimy ręcznie kolejne
+
+# LUB
+
+mniejsze <- c(quantile(x, probs = seq(0.1,0.9,0.1)))
+wieksze <- c(quantile(x, probs = seq(0.101,0.901,0.1)))
+breaki <- (wieksze+mniejsze)/2
+as.numeric(breaki)
+hist(x, breaks = breaki)
 
 # dystrybuanta i gestosc rozkladu jednostajnego: rozklad teoretyczny versus empiryczny
 
