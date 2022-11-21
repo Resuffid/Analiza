@@ -128,7 +128,8 @@ ggplot(diam_samp, aes(x = x)) +
 # *zamienić etykiety osi x ("rozmiar diamentu w kierunku x") oraz osi y ("rozmiar diamentu w kierunku y")
 
 ggplot(diam_samp, aes(sample=x, color=I("blue"), size=I(5), alpha=I(0.8)))+
-  geom_qq()
+  geom_qq()+
+  geom_qq(aes(sample=y))
 
 ggplot(diam_samp, aes(sample=x, color=I("blue"), size=I(5), alpha=I(0.8)))+
   geom_qq()+
